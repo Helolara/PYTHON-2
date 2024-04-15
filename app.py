@@ -1,6 +1,6 @@
 import os 
-
-restaurante=[] 
+#inserir 2 restaurantes na list
+restaurantes=['Bife Sujo', 'Saco de Feijão'] 
 
 def finalizar_app():
     os.system('cls')
@@ -24,10 +24,19 @@ def exibir_opcoes():
 def cadastrar_novo_restaurante():
      os.system('cls')
      nome_do_restaurante=input('Digite o nome do novo restaurante: \n')
-     restaurante.append(nome_do_restaurante)
+     restaurantes.append(nome_do_restaurante)
      print(f'O restaurante {nome_do_restaurante}, foi cadastrado com sucesso\n')
      input("Digite uma tecla para voltar ao menu principal: \n")
      main()
+def listar_restaurantes():
+    os. system('cls')
+    print('Listando os restaurantes \n')
+    #em português
+    for restaurante in restaurantes:
+        print(f'-{restaurante}')
+    #chamar duas funções de saída
+    input("\n Digite uma tecla para voltar ao menu principal: \n")
+    main()
 
 def escolher_opcoes(): 
     try:
@@ -37,7 +46,8 @@ def escolher_opcoes():
             print('Você escolheu cadastrar um restaurante\n')
             cadastrar_novo_restaurante()
         elif (opcao_digitada==2):
-            print('Você escolheu listar os restaurantes do app\n')
+            # print('Você escolheu listar os restaurantes do app\n')
+            listar_restaurantes()
         elif (opcao_digitada==3):
             print('Você escolheu ativar um restaurante\n')
         elif (opcao_digitada==4):
